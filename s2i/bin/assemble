@@ -1,0 +1,14 @@
+#!/bin/bash -e
+
+# By default S2I places the application source in 
+# {io.openshift.s2i.destination}/src directory
+# Where io.openshift.s2i.destination is the label defined on the image
+
+echo ">>> Installing application source"
+pushd /tmp/src
+find . | xargs -I % install -D % /opt/app-root/%
+popd
+echo ">>> Installation completed"
+
+exit 0
+

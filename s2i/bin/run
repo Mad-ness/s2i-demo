@@ -1,0 +1,7 @@
+#!/bin/bash
+
+export FLASK_APP=main.py 
+exec flask run --with-threads --debugger -h 0.0.0.0 -p $LISTEN_PORT
+
+exit 0
+

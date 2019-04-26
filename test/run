@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# run the application
+export FLASK_APP=main.py 
+exec flask run --with-threads --debugger -h 0.0.0.0 -p $LISTEN_PORT &
+
+# give it some time to start
+sleep 5
+
+# perform  a series of tests
+for ((i=0; i<100; i++)); do
+
+  curl -s http://127.0.0.1:9000/healthz || exit 1
+
+done
+
+exit 0
+
