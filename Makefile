@@ -9,7 +9,7 @@ runapp:
 build_s2i:
 	docker build -t $(S2I_IMAGE_NAME) .
 
-build_app: build_s2i
+build_app: 
 	/usr/local/bin/s2i build --context-dir demo-app $(APP_GIT_REPO) $(S2I_IMAGE_NAME) $(APP_IMAGE_NAME)
 #	/usr/local/bin/s2i build demo-app/ $(S2I_IMAGE_NAME) $(APP_IMAGE_NAME)
 
