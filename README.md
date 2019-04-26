@@ -311,7 +311,7 @@ drwxr-xr-x. 2 root root  27 Apr 26 18:02 templates
 /opt/app-root
 >>> Installation completed
 Build completed successfully
-``
+```
 
 After this command completed successfully the image ___flask-app___ can be used for running our application.
 
