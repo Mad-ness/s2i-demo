@@ -191,7 +191,7 @@ And also includes a template file *demo-app/templates/page_404.html* needed to t
 
 In order to automate all routine operations, there is _Makefile_ which calls all needed commands
 
-```
+```shell
 $ cat Makefile
 ```
 ```makefile
@@ -231,7 +231,7 @@ Now we are ready to create an __SI2 image__.
 
 * Build the image __frontend-s2i__. Just run `make build_s2i` or do the same by calling directly the command from the _Makefile_ `docker build -t s2i-flask .`:
 
-```
+```shell
 docker build -t s2i-flask .
 Sending build context to Docker daemon 28.16 kB
 Step 1/9 : FROM python:3
@@ -298,10 +298,10 @@ At this run __S2I__ performs following actions:
 - calls the script `/usr/libexec/s2i/bin/assemble`
 - creates a new image called `flask-app`
 
-```
+```bash
 $ make build_app
 ```
-```
+```bash
 /usr/local/bin/s2i build --context-dir demo-app https://github.com/Mad-ness/s2i-demo.git s2i-flask flask-app
 >>> Installing application source
 /tmp/src /opt/app-root
@@ -319,7 +319,7 @@ After this command completed successfully the image ___flask-app___ can be used 
 
 * Run an application container from the app image `docker run -d --name flask-demoapp -p 9000:9000/tcp flask-app` (we can also use `make runapp`)
 
-```
+```bash
 $ sudo make runapp
 docker run -d --name flask-demoapp -p 9000:9000/tcp flask-app
 c819f3b7e09ffe5d3029e07566a43560efeadfc2180f722abce4664ae1ebb421
@@ -327,7 +327,7 @@ c819f3b7e09ffe5d3029e07566a43560efeadfc2180f722abce4664ae1ebb421
 
 * And check that the application is responding on the requests
 
-```
+```bash
 $ for  url in / /ping /healthz /version /badpage; do curl 127.0.0.1:9000${url}; echo; done
 Hello, World!
 pong
