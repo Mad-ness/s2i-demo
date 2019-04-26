@@ -6,25 +6,23 @@ This lab demonstrates usage of __S2I__ tool. The repo is https://github.com/Mad-
 
 * The lab should be done on a linux host with running _docker_ service.
 * A Docker registry should exist and the client should be able to pull and push images from/to it.
-
-* ___S2I___ tool should be downloaded and put into _$HOME_ directory:
-
+* Download and install __S2I__ tool:
 ```
 $ curl -sLo - https://github.com/openshift/source-to-image/releases/download/v1.1.13/source-to-image-v1.1.13-b54d75d3-linux-amd64.tar.gz | tar -C /usr/local/bin -xzf -
 $ ls -l /usr/local/bin/s2i
 -rwxr-xr-x. 1 demo demo 7271680 Dec 11 18:26 /usr/local/bin/s2i
 ```
+* Clone the repository on the host:
+``
+$ git clone https://github.com/Mad-ness/s2i-demo.git
+```
 
-* Copy all files from this directory to $HOME/lab-s2i-tool
 
-
-Perform all further actions in __$HOME/lab-s2i-tool__ directory.
+Perform all further actions in `./s2i-demo` directory.
 
 
 ## Phase 1: Preparing S2I scripts
 
-
-Make sure that all scripts in _s2i/bin_ directory has the execute bit enabled (`chmod a+x s2i/bin/*`).
 
 ### Script s2i/bin/run
 
