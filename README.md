@@ -13,7 +13,7 @@ $ ls -l /usr/local/bin/s2i
 -rwxr-xr-x. 1 demo demo 7271680 Dec 11 18:26 /usr/local/bin/s2i
 ```
 * Clone the repository on the host:
-``
+```
 $ git clone https://github.com/Mad-ness/s2i-demo.git
 ```
 
