@@ -14,7 +14,6 @@ ENV         LISTEN_PORT 9000
 WORKDIR     /opt/app-root
 
 ADD         ./s2i/bin                 /usr/libexec/s2i
-ADD         ./source/                 /opt/app-root
 ADD         ./config/requirements.txt /opt/app-root
 RUN         pip install --no-cache-dir -r /opt/app-root/requirements.txt
 

@@ -6,7 +6,8 @@
 
 echo ">>> Installing application source"
 pushd /tmp/src
-find . | xargs -I % install -D % /opt/app-root/%
+ls -l 
+find . -type f | xargs -I % install -D % /opt/app-root/%
 popd
 echo ">>> Installation completed"
 

@@ -2,10 +2,14 @@
 
 cat << EOF 
 
-Usage:
-  Put the sources of your Flask application into /app directory.
-  File main.py must exist as /app/main.py. This is an entry point 
-  to your app.
+This is the S2I demo image that runs a Flask application.
+To use it, install S2I: https://github.com/openshift/source-to-image
+
+Sample invocation:
+  s2i build https://github.com/Mad-ness/s2i-demo.git --context-dir=demo-app python:3 flask-app
+
+You can then run the resulting image via:
+  docker run -p 9000:9000 flask-app
 
 EOF
 
