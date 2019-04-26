@@ -283,10 +283,10 @@ Removing intermediate container 3100d327d3b9
 Successfully built c2c1ee05803a
 ```
 
-Right now the image named s2i-flask is a ready __S2I__ image. Such S2I images are shipped a lot within OpenShift.
+Right now the image named s2i-flask is a ready __S2I__ image. A lot of _S2I_ images like this are shipped with OpenShift.
 
 
-Now we are ready deploy our application to this S2I image
+Now we are ready to deploy our application from this S2I image.
 
 ## Phase 3. Building the app-ready image
 
